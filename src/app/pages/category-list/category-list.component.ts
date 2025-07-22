@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { CategoryCardComponent } from "../component/category-card/category-card.component";
-import CategoryService from '../service/Category.service';
-import Category from '../../app/models/Category';
+
 import { CommonModule, NgFor } from '@angular/common';
+import { CategoryCardComponent } from '../../component/category-card/category-card.component';
+import CategoryService from '../../service/Category.service';
+import Category from '../../models/Category';
 
 @Component({
   selector: 'app-category-list',

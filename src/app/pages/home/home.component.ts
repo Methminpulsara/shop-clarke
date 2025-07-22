@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CategoryCardComponent } from "../component/category-card/category-card.component";
-import CategoryService from '../service/Category.service';
+import { Component } from '@angular/core';
 import { CategoryListComponent } from "../category-list/category-list.component";
+
 
 @Component({
   selector: 'app-home',
