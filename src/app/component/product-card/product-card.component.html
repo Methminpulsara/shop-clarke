@@ -1,8 +1,12 @@
-<div class="card" style="width: 15rem;">
-  <img src="https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp" class="card-img-top w-75" alt="Product Image">
-  <div class="card-body">
-    <h5 class="card-title">Product Name</h5>
-    <h6 class="card-subtitle mb-2 text-success">$99.99</h6>
-    <p class="card-text">Short description of the product goes here. It should be concise.</p>
+<div class="bg-white shadow-md rounded-xl overflow-hidden">
+  <img
+    [src]="product.images?.[0] "
+    alt="Product Image"
+    class="w-full h-30 object-cover"
+  />
+  <div class="p-4">
+    <h2 class="font-bold text-lg text-gray-800">{{ product.title | slice:0:15}}</h2>
+    <p class="text-sm text-gray-600 mb-2">{{ product.description | slice:0:40 }}...</p>
+    <span class="text-green-600 font-semibold">${{ product.price }}</span>
   </div>
 </div>

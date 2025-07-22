@@ -26,7 +26,7 @@ constructor(private cateService: CategoryService) {}
   getCategories() {
     return this.cateService.getAll().subscribe({
       next: (data) => {
-       this.categories=data;
+      this.categories=data;
       },
       error: (error) => {
         console.log(error);

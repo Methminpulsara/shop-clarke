@@ -11,8 +11,8 @@ export default class ProductService {
   private baseUrl ="https://dummyjson.com/products"
 
 
-  getAllProducts():Observable<Product[]>{
-    return this.http.get<Product[]>(this.baseUrl);
-  }
+getAllProducts(): Observable<{ products: Product[] }> {
+  return this.http.get<{ products: Product[] }>(`${this.baseUrl}`);
+}
 
 }
