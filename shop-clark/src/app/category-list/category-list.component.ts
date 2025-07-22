@@ -1,0 +1,36 @@
+import { Component } from '@angular/core';
+import { CategoryCardComponent } from "../component/category-card/category-card.component";
+import CategoryService from '../service/Category.service';
+import Category from '../../models/Category';
+import { CommonModule, NgFor } from '@angular/common';
+
+@Component({
+  selector: 'app-category-list',
+  imports: [CategoryCardComponent,NgFor , CommonModule],
+  templateUrl: './category-list.component.html',
+  styleUrl: './category-list.component.css'
+})
+export class CategoryListComponent {
+
+
+constructor(private cateService: CategoryService) {}
+
+  public categories: Category[] = [];
+
+
+  ngOnInit(): void {
+    this.getCategories();
+  }
+
+  getCategories() {
+    return this.cateService.getAll().subscribe({
+      next: (data) => {
+       this.categories=data;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
+
+}

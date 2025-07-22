@@ -1,0 +1,15 @@
+
+*{
+  margin: 0%;
+  padding: 0%;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevent double scrollbars */
+}
+
+main {
+  overflow-y: auto; /* Allows scrolling inside the main content area */
+  max-height: 100vh;
+}

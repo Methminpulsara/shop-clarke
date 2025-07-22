@@ -1,0 +1,29 @@
+<div class="d-flex min-vh-100 bg-white">
+  <nav class="bg-light border-end p-3" style="width: 250px; min-height: 100vh;">
+    <h5 class="mb-4 ms-4 text-primary text-black fw-bold">
+      <i class="bi bi-bag"></i> Shop Clark
+    </h5>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2">
+        <a
+          routerLink="/dashboard/home"
+          routerLinkActive="active"
+          class="btn btn-light w-100 p-2 text-start d-flex align-items-center">
+          <i class="bi bi-house-door me-2"></i> Home
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a
+          routerLink="/dashboard/products"
+          routerLinkActive="active"
+          class="btn btn-light w-100 p-2 text-start d-flex align-items-center">
+          <i class="bi bi-box-seam me-2"></i> Products
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="flex-grow-1 p-4">
+    <router-outlet></router-outlet>
+  </main>
+</div>
