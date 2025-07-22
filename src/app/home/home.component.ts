@@ -7,7 +7,7 @@ import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [CategoryCardComponent, CategoryListComponent],
+  imports: [CategoryListComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
