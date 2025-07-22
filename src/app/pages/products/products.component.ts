@@ -3,10 +3,11 @@ import { ProductCardComponent } from '../../component/product-card/product-card.
 import ProductService from '../../service/Product.service';
 import { NgFor } from '@angular/common';
 import Product from '../../models/Product';
+import { CategoryListComponent } from "../category-list/category-list.component";
 
 @Component({
   selector: 'app-products',
-  imports: [ProductCardComponent, ProductCardComponent,NgFor],
+  imports: [ProductCardComponent, ProductCardComponent, NgFor, CategoryListComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })

@@ -1,6 +1,13 @@
-
-<div class="category-card bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-3 border border-gray-100 hover:border-blue-200 cursor-pointer group transform hover:-translate-y-1 hover:scale-105">
-  <p class="text-center font-semibold text-gray-700 group-hover:text-blue-600 transition-colors duration-300 text-sm">
+<ng-container *ngIf ="layout === 'list' ; else scrollLayout">
+  <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-3 border border-gray-100 hover:border-blue-200 cursor-pointer group transform hover:-translate-y-1 hover:scale-105">
+    <p class="text-center font-semibold text-gray-700 group-hover:text-blue-600 transition-colors duration-300 text-sm">
+      {{ category.name }}
+    </p>
+  </div>
+</ng-container>
+<ng-template #scrollLayout>
+  <button
+    class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-blue-500 hover:text-white transition-colors duration-300 whitespace-nowrap">
     {{ category.name }}
-  </p>
-
+  </button>
+</ng-template>
