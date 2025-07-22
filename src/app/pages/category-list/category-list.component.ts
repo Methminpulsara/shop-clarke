@@ -36,4 +36,8 @@ constructor(private cateService: CategoryService) {}
     });
   }
 
+  selectedCategory(category:Category){
+    console.log(category.name);
+  }
+
 }

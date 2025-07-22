@@ -5,7 +5,10 @@
       <app-category-card
         *ngFor="let category of categories"
         [category]="category"
-        [layout]="'list'">
+        [layout]="'list'"
+        (selectedCategory)="selectedCategory($event)"
+        >
+
       </app-category-card>
     </div>
   </ng-container>
