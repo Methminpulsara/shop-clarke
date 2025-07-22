@@ -1,12 +1,10 @@
-<div class="container mx-auto px-4 py-6 space-y-6">
+<div class="container  px-4 py-6 space-y-6">
 
-  <!-- Sticky Category Scroll Bar -->
-  <div class="sticky top-0 bg-white z-10 pb-4 pt-2 border-b border-gray-200">
+  <div class="top-0 bg-white z-10 pb-4 pt-2 border-b border-gray-200">
     <h2 class="text-xl font-semibold text-gray-800 mb-2 px-1">Categories</h2>
     <app-category-list layout="scroll"></app-category-list>
   </div>
 
-  <!-- Product Grid -->
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     <app-product-card
       *ngFor="let product of productList"
