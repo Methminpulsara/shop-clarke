@@ -16,7 +16,7 @@ export class CategoryCardComponent {
 
 
   selectedCategoryHandler() {
-    this.selectedCategory.emit(this.category.name);
+    this.selectedCategory.emit(this.category.slug);
   }
 
 }

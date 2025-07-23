@@ -4,6 +4,7 @@ import { CommonModule, NgFor } from '@angular/common';
 import { CategoryCardComponent } from '../../component/category-card/category-card.component';
 import CategoryService from '../../service/Category.service';
 import Category from '../../models/Category';
+import ProductService from '../../service/Product.service';
 
 @Component({
   selector: 'app-category-list',
@@ -14,7 +15,7 @@ import Category from '../../models/Category';
 export class CategoryListComponent {
 
 
-constructor(private cateService: CategoryService) {}
+constructor(private cateService: CategoryService, private productService : ProductService) {}
 
 
   @Input() layout: 'grid' | 'scroll' = 'grid';
@@ -37,7 +38,15 @@ constructor(private cateService: CategoryService) {}
   }
 
   selectedCategory(categoryName:string){
-    console.log(categoryName);
+    this.productService.getProductsByCategory(categoryName).subscribe({
+      next: (data) => {
+      console.log(data);
+
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 
 }
