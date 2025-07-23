@@ -4,6 +4,7 @@
   <div class="mt-5  gap-3 flex-wrap">
     <app-category-list
       layout="grid"
+      (selectedCategory)="dispayProductsOfSelectedCategory($event)"
     ></app-category-list>
   </div>
 </div>
