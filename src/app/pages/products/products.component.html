@@ -9,6 +9,7 @@
     <app-product-card
       *ngFor="let product of productList"
       [product]="product"
+      (selectedProduct)="selectedProduct($event)"
     ></app-product-card>
   </div>
 

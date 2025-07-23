@@ -14,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductsComponent implements OnInit {
 
+
     constructor(
       private productService :  ProductService,
       private route: ActivatedRoute
@@ -52,6 +53,12 @@ export class ProductsComponent implements OnInit {
       },
       error: err => console.error(err)
     });
+  }
+
+
+  selectedProduct(id: number) {
+    console.log(id);
+
   }
 
 }

@@ -19,4 +19,8 @@ export default class ProductService {
     return this.http.get<{products: Product[]}>(`${this.baseUrl}/category/${slug}`);
   }
 
+  getProductById(id:string):Observable<Product>{
+    return this.http.get<Product>(`${this.baseUrl}/${id}`);
+  }
+
 }
