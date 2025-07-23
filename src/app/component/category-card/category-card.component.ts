@@ -12,11 +12,11 @@ export class CategoryCardComponent {
   @Input() category!: Category;
   @Input() layout: 'list' | 'scroll' = 'list';
 
-  @Output() selectedCategory = new EventEmitter<Category>();
+  @Output() selectedCategory = new EventEmitter<string>();
 
 
   selectedCategoryHandler() {
-    this.selectedCategory.emit(this.category);
+    this.selectedCategory.emit(this.category.name);
   }
 
 }

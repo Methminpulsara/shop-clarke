@@ -5,21 +5,27 @@ import { ProductsComponent } from './pages/products/products.component';
 
 
 export const routes: Routes = [
-  {path: '',
-    component:DasboardComponent
+  {  path: '',
+    redirectTo:'dashboard',
+    pathMatch: 'full'
   },
   {
-    path:"dashboard",
-    component:DasboardComponent,
-    children:[
-    {
-      path:"home",
-      component :HomeComponent
-    },
-    {
-      path:"products",
-      component:ProductsComponent
-    }]
+    path: 'dashboard',
+    component: DasboardComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+        pathMatch:'full'
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: 'products',
+        component: ProductsComponent,
+      },
+    ],
   },
-
 ];
