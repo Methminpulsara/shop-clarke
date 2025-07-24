@@ -1,6 +1,7 @@
 a.active {
   background-color: #dfdaff;
-  color: white;
+  color: rgb(75, 72, 72);
   font-weight: 500;
-  border-radius: 16px;
+  border-radius: 6px;
+  border-color: #dfdaff ;
 }
