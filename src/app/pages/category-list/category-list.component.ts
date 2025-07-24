@@ -15,11 +15,11 @@ export class CategoryListComponent {
   constructor(
     private cateService: CategoryService,
     private productService: ProductService
-  ) {}
+  ) { }
 
   @Input() layout: 'grid' | 'scroll' = 'grid';
 
-  @Output() selectedCategory= new EventEmitter<string>();
+  @Output() selectedCategory = new EventEmitter<string>();
 
   public categories: Category[] = [];
 
@@ -39,6 +39,6 @@ export class CategoryListComponent {
   }
 
   onSelectedCategory(categoryName: string) {
-   this.selectedCategory.emit(categoryName);
+    this.selectedCategory.emit(categoryName);
   }
 }

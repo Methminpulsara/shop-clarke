@@ -1,9 +1,5 @@
 <div class="bg-white shadow-md rounded-xl overflow-hidden " (click)="onProductClick()">
-  <img
-    [src]="product.images[0] "
-    alt="Product Image"
-    class="w-full h-30 object-cover"
-  />
+  <img [src]="product.images[0] " alt="Product Image" class="w-full h-30 object-cover" />
   <div class="p-4">
     <h2 class="font-bold text-lg text-gray-800">{{ product.title | slice:0:15}}</h2>
     <p class="text-sm text-gray-600 mb-2">{{ product.description | slice:0:40 }}...</p>

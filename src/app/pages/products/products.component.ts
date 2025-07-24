@@ -15,27 +15,25 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductsComponent implements OnInit {
 
 
-    constructor(
-      private productService :  ProductService,
-      private route: ActivatedRoute
-    ){}
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute
+  ) { }
 
 
-    public productList : Product[]=[]
+  public productList: Product[] = []
 
 
-    ngOnInit(): void {
-      this.route.paramMap.subscribe(params=>{
-        const category = params.get('category')
-        if(!category){
-         this.getAllProducts()
-        }else{
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const category = params.get('category')
+      if (!category) {
+        this.getAllProducts()
+      } else {
         this.getProductsByCategory(category)
-        }
-      })
-    }
-
-
+      }
+    })
+  }
 
   getAllProducts() {
     this.productService.getAllProducts().subscribe({
@@ -46,7 +44,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  getProductsByCategory(category:string) {
+  getProductsByCategory(category: string) {
     this.productService.getProductsByCategory(category).subscribe({
       next: (data) => {
         this.productList = data.products;
@@ -54,8 +52,4 @@ export class ProductsComponent implements OnInit {
       error: err => console.error(err)
     });
   }
-
-
-  
-
 }

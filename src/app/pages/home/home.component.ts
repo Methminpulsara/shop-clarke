@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent  {
+export class HomeComponent {
 
 
- constructor(private router: Router){}
+  constructor(private router: Router) { }
 
 
-    dispayProductsOfSelectedCategory(category: string) {
-      this.router.navigate(['/dashboard/products/category', category]);
-    }
+  dispayProductsOfSelectedCategory(category: string) {
+    this.router.navigate(['/dashboard/products/category', category]);
+  }
 
 }
