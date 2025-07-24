@@ -56,9 +56,6 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  selectedProduct(id: number) {
-    console.log(id);
-
-  }
+  
 
 }

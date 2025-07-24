@@ -16,7 +16,7 @@ export class HomeComponent  {
 
 
     dispayProductsOfSelectedCategory(category: string) {
-      this.router.navigate(['/dashboard/products', category]);
+      this.router.navigate(['/dashboard/products/category', category]);
     }
 
 }

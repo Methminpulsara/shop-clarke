@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import Product from '../../models/Product';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
@@ -12,15 +13,17 @@ import { CommonModule } from '@angular/common';
 export class ProductCardComponent {
 
 
+constructor(private router:Router){}
+
+
   @Input() product!: Product // all products parentgen gnnw
 
-  @Output() selectedProduct = new EventEmitter<number>(); // select krpu product eke id eka parennt ywann
 
 
-  onProductClick(){
-    this.selectedProduct.emit(this.product.id);
-  }
+ onProductClick() {
+ this.router.navigate(['/dashboard/products',this.product.id]);
 
+}
 
 
 }
