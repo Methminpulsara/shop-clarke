@@ -1,8 +1,8 @@
 <ng-container *ngIf="layout === 'list' ; else scrollLayout">
   <div
-    class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-3 border border-gray-100 hover:border-blue-200 cursor-pointer group transform hover:-translate-y-1 hover:scale-105">
+    class="bg-black rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-3 border border-gray-200 hover:border-blue-200 cursor-pointer group transform hover:-translate-y-1 hover:scale-105">
     <button (click)="selectedCategoryHandler()"
-      class="text-center font-semibold text-gray-700 group-hover:text-blue-600 transition-colors duration-300 text-sm">
+      class="text-center font-semibold text-purple-400 group-hover:text-violet-700 transition-colors duration-300 text-sm">
       {{ category.name }}
     </button>
   </div>

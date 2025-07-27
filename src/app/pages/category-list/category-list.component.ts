@@ -24,11 +24,7 @@ export class CategoryListComponent {
   public categories: Category[] = [];
 
   ngOnInit(): void {
-    this.getCategories();
-  }
-
-  getCategories() {
-    return this.cateService.getAll().subscribe({
+   this.cateService.getAll().subscribe({
       next: (data) => {
         this.categories = data;
       },
@@ -37,6 +33,7 @@ export class CategoryListComponent {
       },
     });
   }
+
 
   onSelectedCategory(categoryName: string) {
     this.selectedCategory.emit(categoryName);
