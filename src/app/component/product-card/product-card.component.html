@@ -1,11 +1,10 @@
 <div
-  class="bg-gray-900 container hover:bg-gray-800 transition duration-300 shadow-lg rounded-xl overflow-hidden cursor-pointer"
-  (click)="onProductClick()"
->
+  class="bg-gray-900 container hover:bg-gray-800 transition duration-300 shadow-lg rounded-xl overflow-hidden cursor-pointer">
   <img
     [src]="product.images[0]"
     alt="Product Image"
     class="w-full h-40 object-cover"
+      (click)="onProductClick()"
   />
   <div class="p-4">
     <h2 class="font-bold text-lg text-white truncate">
@@ -16,7 +15,18 @@
     </p>
     <span class="text-green-400 font-semibold">${{ product.price }}</span>
     <div>
-      <button class="bg-white border-yellow-50 rounded-md text-center text-pretty ">Add to cart</button>
+    <button
+    (click)="openQuantityPopup(product)"
+  class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold mt-1 py-1 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+  Add to Cart
+</button>
     </div>
   </div>
 </div>
+
+<app-quantity-popup
+  *ngIf="showPopup"
+  [product]="selectedProduct"
+  (confirm)="addToCart($event)"
+  (cancel)="closePopup()"
+></app-quantity-popup>
