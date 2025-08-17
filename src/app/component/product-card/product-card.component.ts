@@ -3,6 +3,7 @@ import Product from '../../models/Product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { QuantityPopupComponent } from "../quantity-popup/quantity-popup.component";
+import CartService from '../../service/Cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -15,7 +16,7 @@ export class ProductCardComponent {
 
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private cartService : CartService) { }
 
 
   @Input() product!: Product // all products parentgen gnnw
