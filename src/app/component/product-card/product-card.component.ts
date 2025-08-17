@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { QuantityPopupComponent } from "../quantity-popup/quantity-popup.component";
 import CartService from '../../service/Cart.service';
+import Cart from '../../models/Cart';
 
 @Component({
   selector: 'app-product-card',
@@ -37,8 +38,30 @@ export class ProductCardComponent {
   }
 
   addToCart(quantity: number) {
-    this.closePopup();
-  }
+  const cartDetails: Cart = {
+    userId: 1, // your test user
+    products: [
+      {
+        id: this.selectedProduct.id,
+        quantity: quantity,
+      },
+    ],
+  };
+
+  this.cartService.addToCart(cartDetails).subscribe({
+    next: (res) => {
+      console.log('Added to cart:', res);
+
+      this.cartService.getUserCart(cartDetails.userId).subscribe({
+        next: (cartRes) => console.log('User cart:', cartRes),
+        error: (err) => console.error('Error fetching cart:', err),
+      });
+    },
+    error: (err) => console.error('Error adding to cart:', err),
+  });
+
+  this.closePopup();
+}
 
 
 
