@@ -63,13 +63,9 @@ export class ProductCardComponent {
 
   this.closePopup();
 }
-
-
-
   onProductClick() {
     this.router.navigate(['/dashboard/products', this.product.id]);
 
   }
-
 
 }
