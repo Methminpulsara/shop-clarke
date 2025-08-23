@@ -16,6 +16,5 @@ export default class CartService {
   getUserCart(userId:number){
     return this.http.get<any>(`${this.baseUrl}/user/${userId}`);
   }
-  
 
 }
