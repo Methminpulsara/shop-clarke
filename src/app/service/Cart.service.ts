@@ -11,11 +11,11 @@ export default class CartService {
 
   addToCart(cartDetails:Cart) :Observable<Cart> {
     return this.http.post<any>(`${this.baseUrl}/add`,cartDetails)
-
   }
 
   getUserCart(userId:number){
     return this.http.get<any>(`${this.baseUrl}/user/${userId}`);
   }
+  
 
 }
