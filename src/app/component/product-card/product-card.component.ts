@@ -48,6 +48,7 @@ export class ProductCardComponent {
     ],
   };
 
+
   this.cartService.addToCart(cartDetails).subscribe({
     next: (res) => {
       console.log('Added to cart:', res);
@@ -69,8 +70,6 @@ export class ProductCardComponent {
     this.router.navigate(['/dashboard/products', this.product.id]);
 
   }
-
-
 
 
 }
