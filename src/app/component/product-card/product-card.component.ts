@@ -65,7 +65,6 @@ export class ProductCardComponent {
 }
   onProductClick() {
     this.router.navigate(['/dashboard/products', this.product.id]);
-
   }
 
 }
