@@ -5,3 +5,4 @@ export default interface Cart {
     quantity: number;
   }[];
 }
+
